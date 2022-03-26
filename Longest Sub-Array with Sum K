@@ -1,0 +1,23 @@
+//Longest Sub-Array with Sum K
+int lenOfLongSubarr(int A[],  int N, int K) 
+    { 
+        // Complete the function
+        int i=0,j=0,ln=0,sum=0;;
+        unordered_map<int,int>map;
+        for(i=0;i<N;i++)
+        {
+            sum=sum+A[i];
+            if(sum==K)
+            {
+                ln=max(ln,i+1);
+            }
+            if(map.find(sum)==map.end())
+            {
+                map[sum]=i;
+            }
+            if(map.find(sum-K)!=map.end())
+            ln=max(ln,i-map[sum-K]);
+        }
+        return ln;
+        
+    }
