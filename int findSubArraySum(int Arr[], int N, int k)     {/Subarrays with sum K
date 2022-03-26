@@ -1,3 +1,4 @@
+Subarrays with sum K
 int findSubArraySum(int Arr[], int N, int k)
     {
         // code here
